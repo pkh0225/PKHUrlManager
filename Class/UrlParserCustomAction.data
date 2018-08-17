@@ -1,0 +1,20 @@
+{
+    "customActionUrlList": [
+        {
+            "description":"",
+            "title":"m.daum.com",
+            "name": "m.daum.com",
+            "type": "m.daum.com",
+            "checkUrls": [
+                "m.daum.com"
+            ],
+            "funNames": [
+                "LinkManager.urlFuncNewPage"
+            ]
+        }
+
+
+    ]
+
+}
+

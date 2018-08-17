@@ -1,0 +1,29 @@
+{
+    "webActionUrlList": [
+        {
+            "description":"",
+            "title":"google",
+            "name": "google",
+            "type": "CustomUrlAction",
+            "checkUrls": [
+                "https://www.google.co.kr/"
+            ],
+            "funNames": [
+                "WebViewController.urlFuncGoogle"
+            ]
+        },
+        {
+            "description":"",
+            "title":"naver",
+            "name": "naver",
+            "type": "naver",
+            "checkUrls": [
+                "https://m.naver.com/"
+            ],
+            "funNames": [
+                "WebViewController.urlFuncNaver"
+            ]
+        }
+    ]
+}
+

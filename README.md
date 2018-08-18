@@ -1,8 +1,49 @@
 # PKHUrlManager
 
-## 👣 웹 url에서 json으로 미리 지정해놓은 값이 들어올경우 특정 함수를 실행해주는 매니져..
+## 🌐 Redirecting Web urls to Native functions
+> 웹 url에서 json으로 미리 지정해놓은 값이 들어올 경우 특정 네이티브 함수를 실행해주는 UrlManager 👣 
 
 ![blogimg](https://github.com/pkh0225/PKHUrlManager/blob/master/screen.png)
+
+
+## JSON Sample
+> Define url custom action lists like this.
+
+#### funNames 
+- `ClassName` + `FunctionName`
+- ex. `WebViewController.urlFuncGoogle`
+
+```
+{
+    "webActionUrlList": [
+        {
+            "description":"",
+            "title":"google",
+            "name": "google",
+            "type": "CustomUrlAction",
+            "checkUrls": [
+                "https://www.google.co.kr/"
+            ],
+            "funNames": [
+                "WebViewController.urlFuncGoogle"
+            ]
+        },
+        {
+            "description":"",
+            "title":"naver",
+            "name": "naver",
+            "type": "naver",
+            "checkUrls": [
+                "https://m.naver.com/"
+            ],
+            "funNames": [
+                "WebViewController.urlFuncNaver"
+            ]
+        }
+    ]
+}
+```
+
 
 ## Core Functions
 

@@ -49,7 +49,6 @@ class WebViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func onTappedNewPage(_ sender: Any) {
-       
         PKHUrlManager.shared.openUrl(url: "https://m.daum.com/")
     }
     

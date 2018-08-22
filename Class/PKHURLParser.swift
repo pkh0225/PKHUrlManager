@@ -21,8 +21,8 @@ struct URLParserInfoType: OptionSet {
 class PKHURLParser {
     static let shared = PKHURLParser()
     
-    var webActionUrlList = [PKHURLParserInfo]()
-    var customActionUrlList = [PKHURLParserInfo]()
+    var webActionUrlList = [PKHURLParserRunner]()
+    var customActionUrlList = [PKHURLParserRunner]()
     
     
     private init() {
@@ -36,8 +36,8 @@ class PKHURLParser {
         
     }
     
-    func loadUrlParserWebAction() -> [PKHURLParserInfo] {
-        var result = [PKHURLParserInfo]()
+    func loadUrlParserWebAction() -> [PKHURLParserRunner] {
+        var result = [PKHURLParserRunner]()
         defer {
             if result.count == 0 {
                 print("UrlParserWebAction file load failure")
@@ -50,7 +50,7 @@ class PKHURLParser {
                 if let dic = content.convertToDictionary() {
                     if let list = dic["webActionUrlList"] as? [[String:Any]] {
                         for item in list {
-                            let obj = PKHURLParserInfo(item: item)
+                            let obj = PKHURLParserRunner(item: item)
                             obj.type = .webAction
                             result.append(obj)
                         }
@@ -65,8 +65,8 @@ class PKHURLParser {
         return result
     }
     
-    func loadUrlParserCustomAction() -> [PKHURLParserInfo] {
-        var result = [PKHURLParserInfo]()
+    func loadUrlParserCustomAction() -> [PKHURLParserRunner] {
+        var result = [PKHURLParserRunner]()
         defer {
             if result.count == 0 {
                 print("UrlParserCustomAction file load failure")
@@ -79,7 +79,7 @@ class PKHURLParser {
                 if let dic = content.convertToDictionary() {
                     if let list = dic["customActionUrlList"] as? [[String:Any]] {
                         for item in list {
-                            let obj = PKHURLParserInfo(item: item)
+                            let obj = PKHURLParserRunner(item: item)
                             obj.type = .customAction
                             result.append(obj)
                         }
@@ -99,7 +99,7 @@ class PKHURLParser {
     }
     
     
-    func checkWebUrl(url: String, type: URLParserInfoType) -> PKHURLParserInfo? {
+    func checkWebUrl(url: String, type: URLParserInfoType) -> PKHURLParserRunner? {
         if type.contains(.webAction) {
             if let data = checkUrlList(url: url, list: webActionUrlList) {
                 return data
@@ -114,7 +114,7 @@ class PKHURLParser {
         return nil
     }
     
-    @inline(__always) func checkUrlList(url: String, list: [PKHURLParserInfo]) -> PKHURLParserInfo? {
+    @inline(__always) func checkUrlList(url: String, list: [PKHURLParserRunner]) -> PKHURLParserRunner? {
     
         for item in list {
             var checkUrlsBool = true
@@ -171,7 +171,7 @@ class PKHURLParser {
 }
 
 let URLParserCallNames = "URLParserCallNames"
-class PKHURLParserInfo: NSObject {
+class PKHURLParserRunner: NSObject {
     var type: URLParserInfoType = .customAction
     var urlDescription: String?             // 설명
     var name: String = ""                   // 이름

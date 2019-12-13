@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aBP-b5-WRo">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aBP-b5-WRo">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,11 +17,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7QW-aK-JEI">
-                                <rect key="frame" x="0.0" y="94" width="375" height="573"/>
+                                <rect key="frame" x="0.0" y="74" width="375" height="593"/>
                                 <color key="backgroundColor" red="1" green="0.86843532986111116" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTp-SD-OIG">
-                                <rect key="frame" x="309" y="64" width="70" height="30"/>
+                                <rect key="frame" x="309" y="44" width="70" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="a4D-q5-5Bo"/>
                                     <constraint firstAttribute="width" constant="70" id="aml-8q-T5a"/>
@@ -31,9 +29,12 @@
                                 <state key="normal" title="Forward">
                                     <color key="titleColor" red="0.053466796875" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onTappedGoForward:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9lu-NP-R8s"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyF-F3-SFC">
-                                <rect key="frame" x="0.0" y="64" width="50" height="30"/>
+                                <rect key="frame" x="0.0" y="44" width="50" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="7zt-hR-MQl"/>
                                     <constraint firstAttribute="width" constant="50" id="80E-Xj-qZT"/>
@@ -41,9 +42,12 @@
                                 <state key="normal" title="Back">
                                     <color key="titleColor" red="0.053466796875" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onTappedGoBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gLf-dn-4EK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKC-M7-kFO">
-                                <rect key="frame" x="58" y="64" width="67" height="30"/>
+                                <rect key="frame" x="58" y="44" width="67" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="67" id="B6z-sp-tv2"/>
                                     <constraint firstAttribute="height" constant="30" id="o9x-Cp-tmt"/>
@@ -56,7 +60,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNn-XX-hof">
-                                <rect key="frame" x="196" y="64" width="80" height="30"/>
+                                <rect key="frame" x="196" y="44" width="80" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="UwX-00-eHr"/>
                                     <constraint firstAttribute="height" constant="30" id="eSo-0e-SZm"/>
@@ -69,7 +73,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEQ-ec-L8w">
-                                <rect key="frame" x="133" y="64" width="55" height="30"/>
+                                <rect key="frame" x="133" y="44" width="55" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="55" id="AD1-nB-okf"/>
                                     <constraint firstAttribute="height" constant="30" id="jH4-H8-Iv8"/>
@@ -117,7 +121,7 @@
             <objects>
                 <navigationController id="aBP-b5-WRo" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="W8T-zU-qLg">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
